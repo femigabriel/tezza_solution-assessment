@@ -81,7 +81,7 @@ export const Headers = (props: AuthList) => {
             </div>
             <span className="text-[#000] font-semibold mx-2 mt-3">Kelin</span>
             <Image
-              src="/../public/assets/images/profile.jpg"
+              src="/assets/images/profile.jpg"
               width={500}
               height={500}
               className="w-[52px] h-[52px] mx-3 cursor-pointer rounded-full"
