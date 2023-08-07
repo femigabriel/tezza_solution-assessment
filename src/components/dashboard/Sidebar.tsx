@@ -2,6 +2,7 @@ import React from "react";
 import { MenuBarist } from "../../services/Services";
 import Link from "next/link";
 import { useRouter } from "next/router";
+const logo = "./assets/images/depositphotos.jpg";
 
 import {
   WindowsOutlined,
@@ -58,13 +59,14 @@ const menu: MenuBarist[] = [
   },
 ];
 
-
 export const Sidebar = () => {
   const router = useRouter();
   return (
     <div className="sidebar">
       <div className="pt-10 ">
-        <div className=" mx-3 rounded-full bg-[#D9D9D9] w-[59px] h-[59px]"></div>
+        <div className=" mx-3 rounded-full bg-[#D9D9D9] w-[59px] h-[59px]">
+          <img src={logo} alt="" />
+        </div>
         <div className="">
           <h3 className="my-10 px-3 text-[16px] tracking-[-0.011em]">Menu</h3>
           <nav className="">
