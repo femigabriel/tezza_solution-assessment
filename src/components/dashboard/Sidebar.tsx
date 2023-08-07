@@ -2,9 +2,7 @@ import React from "react";
 import { MenuBarist } from "../../services/Services";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import SettingsIcon from "../../svgs/SettingIcon";
-import RequesIcon from "../../svgs/RequestIcon";
-import DarkModeIcon from "../../svgs/DarkModeIcon";
+
 import {
   WindowsOutlined,
   UsergroupAddOutlined,
@@ -65,9 +63,9 @@ export const Sidebar = () => {
   const router = useRouter();
   return (
     <div className="sidebar">
-      <div className="pt-10">
+      <div className="pt-10 ">
         <div className=" mx-3 rounded-full bg-[#D9D9D9] w-[59px] h-[59px]"></div>
-        <div>
+        <div className="">
           <h3 className="my-10 px-3 text-[16px] tracking-[-0.011em]">Menu</h3>
           <nav className="">
             {menu?.map((list: any) => {

@@ -18,10 +18,10 @@ export const AddNewClients = () => {
     setEmail(event.target.value);
   };
   const updatePhone = (event: any) => {
-    setPhone(event.target.checked);
+    setPhone(event.target.value);
   };
   const updateAddress = (event: any) => {
-    setAddress(event.target.checked);
+    setAddress(event.target.value);
   };
 
   // Modal
@@ -39,7 +39,13 @@ export const AddNewClients = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (name.length == 0 || email.length == 0) {
+    console.log(name, email, phone, address);
+    if (
+      name.length == 0 ||
+      email.length == 0 ||
+      phone.length == 0 ||
+      address.length == 0
+    ) {
       setError(true);
       //   setIsModalOpen(false);
       return;
@@ -72,18 +78,19 @@ export const AddNewClients = () => {
         onCancel={handleCancel}
         footer={null}
       >
-        <form onSubmit={handleSubmit} className="">
+        <form className="">
           <div className="mb-5">
-            <label htmlFor="">Name</label>
+            <label className="" htmlFor="">
+              Name
+            </label>
             <Input
               className=""
               placeholder=""
               name="name"
               onChange={updateName}
-            
             />
             {error && name.length <= 0 ? (
-              <label className="text-red-400 font-light text-base	">
+              <label className="text-red-400 font-normal text-base	">
                 Input can not be empty
               </label>
             ) : (
@@ -96,12 +103,10 @@ export const AddNewClients = () => {
               className=""
               placeholder=""
               name="email"
-              //   onChange={updateEmail}
-              onChange={(e) => setEmail(e.target.value)}
-              pattern="^\S+@\S+\.\S+$"
+              onChange={updateEmail}
             />
             {error && email.length <= 0 ? (
-              <label className="text-red-400 font-light text-base	">
+              <label className="text-red-400 font-normal text-base	">
                 Input can not be empty
               </label>
             ) : (
@@ -109,15 +114,17 @@ export const AddNewClients = () => {
             )}
           </div>
           <div className="mb-5">
-            <label htmlFor="">Phone</label>
+            <label htmlFor="" className="">
+              Phone
+            </label>
             <Input
               className=""
               placeholder=""
               name="phone"
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={updatePhone}
             />
             {error && phone.length <= 0 ? (
-              <label className="text-red-400 font-light text-base	">
+              <label className="text-red-400 font-normal text-base	">
                 Input can not be empty
               </label>
             ) : (
@@ -127,14 +134,13 @@ export const AddNewClients = () => {
           <div className="mb-5 flex flex-col">
             <label htmlFor="">Residential Address</label>
             <textarea
-              className="border px-3 rounded-[4px]"
+              className="border px-3 py-5 rounded-[4px]"
               placeholder=""
               name="name"
-              //   onChange={updateAddress}
-              onChange={(e) => setAddress(e.target.value)}
+              onChange={updateAddress}
             ></textarea>
             {error && address.length <= 0 ? (
-              <label className="text-red-400 font-light text-base	">
+              <label className="text-red-400 font-normal text-base">
                 Input can not be empty
               </label>
             ) : (
@@ -142,9 +148,7 @@ export const AddNewClients = () => {
             )}
           </div>
           <div className="flex justify-between">
-            <Button className="bg-[#c3ad2e]" 
-            // onClick={handleOk}
-            >
+            <Button className="bg-[#c3ad2e]" onClick={handleSubmit}>
               Add new
             </Button>
             <Button className="" onClick={handleOk}>

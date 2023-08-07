@@ -1,16 +1,75 @@
 import { Input } from "antd";
 import React, { useState } from "react";
-import { BellOutlined, SearchOutlined } from "@ant-design/icons";
-import { AuthList } from "../../services/Services";
-// import { AuthNav } from "./AuthNav";
+import { BellOutlined, MenuOutlined } from "@ant-design/icons";
+import { AuthList, MenuBarist } from "../../services/Services";
 import Image from "next/image";
 const profile = "./images/profile.jpg";
+import type { DrawerProps, RadioChangeEvent } from "antd";
+import { Drawer } from "antd";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Headers = (props: AuthList) => {
+  const [open, setOpen] = useState(false);
+  const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  const onChange = (e: RadioChangeEvent) => {
+    setPlacement(e.target.value);
+  };
+
+  const menu = [
+    {
+      id: 0,
+      title: " Workspace",
+      link: "/workspace",
+    },
+    {
+      id: 1,
+      title: "Clients",
+      link: "/clients",
+    },
+    {
+      id: 2,
+      title: "Schedule Appointment",
+      link: "/apiManagement",
+    },
+    {
+      id: 3,
+      title: "Payment",
+      link: "/merchantManagement",
+    },
+    {
+      id: 4,
+      title: "Task",
+      link: "/usersRole",
+    },
+    {
+      id: 5,
+      title: "Message",
+      link: "/log",
+    },
+    {
+      id: 6,
+      title: "Reports",
+      link: "/financialManagement",
+    },
+  ];
+
   return (
     <div>
       <div className="header bg-white w-full h-[77px]">
         <header className="flex justify-between px-10 py-5">
+          <div className="mobile-menu">
+            <MenuOutlined onClick={showDrawer} />
+          </div>
           <div></div>
           <div className="flex">
             <div className="relative m-6 mt-3 inline-flex w-fit">
@@ -35,6 +94,31 @@ export const Headers = (props: AuthList) => {
         <h1 className="text-[24px] font-semibold">{props.title}</h1>
         <p className="text-[#999] text-[14px]">{props.description}</p>
       </div>
+      <Drawer
+        title="Basic Drawer"
+        placement={placement}
+        closable={false}
+        onClose={onClose}
+        open={open}
+        key={placement}
+      >
+        <nav className="">
+          {menu?.map((list: any) => {
+            return (
+              <Link
+                key={list.id}
+                href={list.link}
+                // className={`${
+                //   router.pathname === list.link ? "active" : ""
+                // } text-[14px] py-2 font-medium cursor-pointer flex mb-5`}
+              >
+                <span className="px-3">{list.icon}</span>
+                <span className="tracking-[-0.011em]">{list.title}</span>
+              </Link>
+            );
+          })}
+        </nav>
+      </Drawer>
     </div>
   );
 };
