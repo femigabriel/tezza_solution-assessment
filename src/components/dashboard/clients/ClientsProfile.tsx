@@ -1,5 +1,5 @@
 import React from "react";
-const profile = "./assets/images/profile.jpg";
+const profile = "/assets/images/profile.jpg";
 import { useSearchParams } from "next/navigation";
 import { ClientListApi } from "@/services/Services";
 
