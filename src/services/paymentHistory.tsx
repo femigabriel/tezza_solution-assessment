@@ -8,7 +8,7 @@ export const paymentHistory: ResponseFetchPaymentHistory[] = [
     date: "11/4/2021",
     amount: 21000,
     status: (
-      <button className="px-3 py-2 bg-red-100 text-[#c3ad2e] text-[12px]">
+      <button className="px-3 py-2 bg-red-100 text-[#c3ad2e] text-[12px] rounded-[8px]">
         Pending
       </button>
     ),
