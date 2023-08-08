@@ -1,6 +1,12 @@
 import { Input } from "antd";
 import React, { useState } from "react";
-import { BellOutlined, MenuOutlined } from "@ant-design/icons";
+import {
+  BellOutlined,
+  MenuOutlined,
+  LoginOutlined,
+  UserOutlined,
+  UsergroupAddOutlined,
+} from "@ant-design/icons";
 import { AuthList, MenuBarist } from "../../services/Services";
 import Image from "next/image";
 const profile = "./images/profile.jpg";
@@ -8,7 +14,8 @@ import type { DrawerProps, RadioChangeEvent } from "antd";
 import { Drawer } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import type { MenuProps } from "antd";
+import { Dropdown } from "antd";
 export const Headers = (props: AuthList) => {
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
@@ -63,6 +70,39 @@ export const Headers = (props: AuthList) => {
     },
   ];
 
+  // Proofile dropdown
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: (
+        <Link href="/workspace" className="login-link flex">
+          <UsergroupAddOutlined className="mt-2" />
+          <span className="text-[16px] font-semibold mx-3 ">Clients</span>
+        </Link>
+      ),
+    },
+    {
+      key: "2",
+      label: (
+        <Link href="/workspace" className="login-link flex">
+          <UserOutlined className="mt-2" />
+          <span className="text-[16px] font-semibold mx-3">Profle</span>
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link href="/" className="login-link  bg-red-200\  flex rounded-md">
+          <LoginOutlined className="mt-2 text-red-600" />
+          <span className="text-[16px] font-semibold mx-3 text-red-600">
+            Log out
+          </span>
+        </Link>
+      ),
+    },
+  ];
+
   return (
     <div>
       <div className="header bg-white w-full h-[77px]">
@@ -80,13 +120,16 @@ export const Headers = (props: AuthList) => {
               <BellOutlined style={{ fontSize: "150%" }} />
             </div>
             <span className="text-[#000] font-semibold mx-2 mt-3">Kelin</span>
-            <Image
-              src="/assets/images/profile.jpg"
-              width={500}
-              height={500}
-              className="w-[52px] h-[52px] mx-3 cursor-pointer rounded-full"
-              alt="bell"
-            />
+
+            <Dropdown menu={{ items }} placement="bottomRight" arrow>
+              <Image
+                src="/assets/images/profile.jpg"
+                width={500}
+                height={500}
+                className="w-[52px] h-[52px] mx-3 cursor-pointer rounded-full"
+                alt="bell"
+              />
+            </Dropdown>
           </div>
         </header>
       </div>
