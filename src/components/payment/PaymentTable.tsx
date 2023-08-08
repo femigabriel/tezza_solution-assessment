@@ -37,8 +37,8 @@ export const PaymentTable = ({ onNextClick }: Props) => {
                 <td className="">{list.name}</td>
                 <td>{list.item}</td>
                 <td>{list.date}</td>
-                <td className="">N{list.amount}</td>
-                <td className="">N{list.status}</td>
+                <td className="">₦{list.amount}</td>
+                <td className="">{list.status}</td>
               </tr>
             </tbody>
           );
