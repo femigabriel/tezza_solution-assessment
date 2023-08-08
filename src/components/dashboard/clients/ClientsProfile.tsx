@@ -1,7 +1,6 @@
 import React from "react";
 const profile = "/assets/images/profile.jpg";
-import { useSearchParams } from "next/navigation";
-import { ClientListApi } from "@/services/Services";
+
 
 import { Button } from "antd";
 
@@ -11,10 +10,7 @@ interface Props {
 }
 
 export const ClientsProfile = ({ onBackClick }: Props) => {
-  const searchParams = useSearchParams();
-  const name = searchParams.get("name");
 
-  const member = ClientListApi.find((member) => member.name === name);
 
   return (
     <div className="mt-5">

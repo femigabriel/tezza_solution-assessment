@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Button, Modal, Input, Form } from "antd";
 
-export const AddNewClients = () => {
+export const AddNewClients = ({ successCallBack }: any) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -39,7 +39,7 @@ export const AddNewClients = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(name, email, phone, address);
+
     if (
       name.length == 0 ||
       email.length == 0 ||
@@ -47,9 +47,10 @@ export const AddNewClients = () => {
       address.length == 0
     ) {
       setError(true);
-      //   setIsModalOpen(false);
       return;
     }
+    setIsModalOpen(false);
+    successCallBack({ name, email, phone, address });
   };
   return (
     <>

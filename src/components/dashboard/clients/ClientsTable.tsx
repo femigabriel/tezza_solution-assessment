@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { clientList } from "@/services/clientsList";
 import { AddNewClients } from "./AddNewClients";
+import { ResponseFetchUsers } from "@/services/Services";
 
 interface Props {
   onNextClick: () => any;
 }
 
 export const ClientsTable = ({ onNextClick }: Props) => {
+  const [data, setData] = useState<ResponseFetchUsers[]>(clientList);
+
   const handleSubmit = () => {
     onNextClick();
   };
 
+  // Add new clients 
+  const addToData = (data: ResponseFetchUsers) => {
+    setData((x) => [...x, data]);
+  };
+
   return (
     <div className="py-10 px-5 w-full client-table bg-white p-5 rounded-md h-full">
-      <AddNewClients />
+      <AddNewClients successCallBack={addToData} />
       <table className="rwd-table w-full">
         <thead>
           <tr className="font-semibold text-[14px]">
@@ -23,7 +31,7 @@ export const ClientsTable = ({ onNextClick }: Props) => {
             <th> Residential Address</th>
           </tr>
         </thead>
-        {clientList?.map((list) => {
+        {data?.map((list) => {
           return (
             <tbody key={list.id}>
               <tr
@@ -42,3 +50,8 @@ export const ClientsTable = ({ onNextClick }: Props) => {
     </div>
   );
 };
+function ResponseFetchUsers(
+  clientList: import("../../../services/Services").ResponseFetchUsers[]
+) {
+  throw new Error("Function not implemented.");
+}
