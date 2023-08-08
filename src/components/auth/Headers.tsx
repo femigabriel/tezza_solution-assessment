@@ -75,7 +75,7 @@ export const Headers = (props: AuthList) => {
     {
       key: "1",
       label: (
-        <Link href="/workspace" className="login-link flex">
+        <Link href="/clients" className="login-link flex">
           <UsergroupAddOutlined className="mt-2" />
           <span className="text-[16px] font-semibold mx-3 ">Clients</span>
         </Link>
