@@ -10,8 +10,6 @@ interface Props {
 }
 
 export const ClientsProfile = ({ onBackClick }: Props) => {
-
-
   return (
     <div className="mt-5">
       <div className="bg-white px-5 py-8 rounded-[8px]">

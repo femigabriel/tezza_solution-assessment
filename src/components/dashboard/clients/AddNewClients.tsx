@@ -52,6 +52,20 @@ export const AddNewClients = ({ successCallBack }: any) => {
     setIsModalOpen(false);
     successCallBack({ name, email, phone, address });
   };
+
+
+   // const addCLients = () => {
+  //   setAddToClientsIndex((x) => x + 1);
+  // };
+
+  // const renderAddToClients = () => {
+  //   switch (addtToClientsIndex) {
+  //     case 0:
+  //       return <AddNewClients />;
+  //     case 1:
+  //       return <AddNewClientPage />;
+  //   }
+  // };
   return (
     <>
       <div>

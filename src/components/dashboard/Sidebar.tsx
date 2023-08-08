@@ -31,31 +31,31 @@ const menu: MenuBarist[] = [
     id: 2,
     title: "Schedule Appointment",
     icon: <ContactsOutlined />,
-    link: "/apiManagement",
+    link: "/schedule",
   },
   {
     id: 3,
     title: "Payment",
     icon: <PayCircleOutlined />,
-    link: "/merchantManagement",
+    link: "/payment",
   },
   {
     id: 4,
     title: "Task",
     icon: <OrderedListOutlined />,
-    link: "/usersRole",
+    link: "/task",
   },
   {
     id: 5,
     title: "Message",
     icon: <MessageOutlined />,
-    link: "/log",
+    link: "/message",
   },
   {
     id: 6,
     title: "Reports",
     icon: <ProfileOutlined />,
-    link: "/financialManagement",
+    link: "/reports",
   },
 ];
 
@@ -68,7 +68,6 @@ export const Sidebar = () => {
           <img src={logo} alt="" />
         </div>
         <div className="">
-          <h3 className="my-10 px-3 text-[16px] tracking-[-0.011em]">Menu</h3>
           <nav className="">
             {menu?.map((list: any) => {
               return (

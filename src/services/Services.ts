@@ -44,6 +44,14 @@ export type MenuBarist = {
     education: string,
     purpose:string,
   };
+ export type ResponseFetchPaymentHistory = {  
+  id: number
+name: string,
+item: string,
+date: string,
+amount: number,
+status: any
+  }
 
   export const ClientListApi = [
     {

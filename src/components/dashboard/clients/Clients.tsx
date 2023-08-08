@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { ClientsTable } from "./ClientsTable";
 import { ClientsProfile } from "./ClientsProfile";
 
+
 export const Clients = () => {
- 
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
-  
+
 
   // switch
 
@@ -17,7 +17,6 @@ export const Clients = () => {
     setCurrentStepIndex((x) => x - 1);
   };
 
-
   const renderCurrentSelection = () => {
     switch (currentStepIndex) {
       case 0:
@@ -28,6 +27,8 @@ export const Clients = () => {
         return <ClientsTable onNextClick={gotoNext} />;
     }
   };
+
+
 
   return (
     <div>
