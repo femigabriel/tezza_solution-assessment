@@ -6,7 +6,7 @@ export const Workspace = () => {
     <div>
       <div className=" w-full">
         <h3 className="text-[16px]">Overview</h3>
-        <div className="flex ">
+        <div className="flex  overview-card">
           <div className="agenda-card mt-5 shadow-md mr-24">
             <div className="bg-red-100 px-3 py-2">
               <span className="text-[14px] font-semibold">Today's Agenda</span>

@@ -71,7 +71,7 @@ export const Headers = (props: AuthList) => {
             <MenuOutlined onClick={showDrawer} />
           </div>
           <div></div>
-          <div className="flex">
+          <div className="flex flex-col">
             <div className="relative m-6 mt-3 inline-flex w-fit">
               <div className="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block w-[25px] h-[25px] text-center -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 rounded-full bg-pink-700 py-1 text-[10px] text-white">
                 3

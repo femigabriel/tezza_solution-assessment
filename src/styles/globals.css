@@ -70,6 +70,10 @@ li {
   .mobile-menu {
     display: block;
   }
+  .overview-card {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .sidebar .active {
