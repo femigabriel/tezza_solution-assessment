@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 import type { MenuProps } from "antd";
 import { Dropdown } from "antd";
 export const Headers = (props: AuthList) => {
+  const router = useRouter;
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
 
@@ -151,9 +152,9 @@ export const Headers = (props: AuthList) => {
               <Link
                 key={list.id}
                 href={list.link}
-                // className={`${
-                //   router.pathname === list.link ? "active" : ""
-                // } text-[14px] py-2 font-medium cursor-pointer flex mb-5`}
+                className={`${
+                  router.pathname === list.link ? "active" : ""
+                } text-[14px] py-2 font-medium cursor-pointer flex mb-5`}
               >
                 <span className="px-3">{list.icon}</span>
                 <span className="tracking-[-0.011em]">{list.title}</span>
