@@ -47,27 +47,27 @@ export const Headers = (props: AuthList) => {
     {
       id: 2,
       title: "Schedule Appointment",
-      link: "/apiManagement",
+      link: "/schedule",
     },
     {
       id: 3,
       title: "Payment",
-      link: "/merchantManagement",
+      link: "/payment",
     },
     {
       id: 4,
       title: "Task",
-      link: "/usersRole",
+      link: "/task",
     },
     {
       id: 5,
       title: "Message",
-      link: "/log",
+      link: "/message",
     },
     {
       id: 6,
       title: "Reports",
-      link: "/financialManagement",
+      link: "/report",
     },
   ];
 
