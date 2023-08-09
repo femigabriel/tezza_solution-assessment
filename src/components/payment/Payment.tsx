@@ -22,5 +22,5 @@ export const Payment = () => {
     }
   };
 
-  return <div>{renderCurrentSelection()}</div>;
+  return <div className="my-10 px-10">{renderCurrentSelection()}</div>;
 };

@@ -62,7 +62,7 @@ const menu: MenuBarist[] = [
 export const Sidebar = () => {
   const router = useRouter();
   return (
-    <div className="sidebar">
+    <div className="sidebar ">
       <div className="pt-10 ">
         <div className=" mx-3 rounded-full bg-[#D9D9D9] w-[59px] h-[59px]">
           <img src={logo} alt="" />
