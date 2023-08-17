@@ -1,6 +1,7 @@
 import React, { Children } from "react";
 import { Sidebar } from "../dashboard/Sidebar";
 import { Headers } from "./Headers";
+import PageContexttProvider from "@/context/PageContextProvider";
 
 interface Props {
   children: React.ReactNode;
@@ -14,8 +15,11 @@ export const DashboardLayout = ({ children, title, description }: Props) => {
       <div className="flex w-full">
         <Sidebar />
         <div className="w-full">
-          <Headers title={title || "no title"} description={description || 'no description'} />
-          {children}
+          <Headers
+            title={title || "no title"}
+            description={description || "no description"}
+          />
+          <PageContexttProvider>{children}</PageContexttProvider>
         </div>
       </div>
     </div>

@@ -26,7 +26,8 @@ export type MenuBarist = {
     description: string
   };
   
-  export type ResponseFetchUsers = {  
+  export type ResponseFetchUsers = {
+    [x: string]: any;  
     title: string;
     description: string
     id: number,
@@ -43,6 +44,7 @@ export type MenuBarist = {
     interest: string,
     education: string,
     purpose:string,
+    profile: any,
   };
  export type ResponseFetchPaymentHistory = {  
   id: number
@@ -135,3 +137,4 @@ status: any
       purpose: "Trading",
     },
   ];
+  

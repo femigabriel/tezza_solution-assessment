@@ -47,14 +47,14 @@ export const Workspace = () => {
             </div>
           </div>
         </div>
-        <div className="activity-card mt-5 shadow-md">
+        <div className="activity-card my-5 pb-5 shadow-md">
           <div className="bg-red-100 px-3 py-2 flex justify-between ">
             <span className="text-[14px] font-semibold">Task that are due</span>
             <span className="text-[12px] text-[#c3ad2e] font-normal cursor-pointer">
               Create Task <ArrowRightOutlined className="ml-2" />
             </span>
           </div>
-          <div className="px-3 py-2">
+          <div className="px-3 py-2 ">
             <div className="bg-red-100 px-3 py-2 mt-2">
               <h3 className="text-[12px] font-semibold">
                 Follow up with{" "}

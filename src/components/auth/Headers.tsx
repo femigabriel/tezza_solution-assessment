@@ -46,7 +46,7 @@ export const Headers = (props: AuthList) => {
     {
       id: 1,
       title: "Clients",
-      link: "/clients",
+      link: "/clients/clients",
     },
     {
       id: 2,

@@ -1,12 +1,13 @@
 import { DashboardLayout } from "@/components/auth/DashboardLayout";
-import { Clients } from "@/components/dashboard/clients/Clients";
+import React from "react";
 
-export default function clients() {
+ const AddClients = () => {
   return (
     <>
       <DashboardLayout title="Clients" description="Here's the clients list">
-        <Clients />
+        hello
       </DashboardLayout>
     </>
   );
-}
+};
+export default AddClients;

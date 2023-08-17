@@ -129,6 +129,9 @@ thead tr:first-child {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .list {
+    font-size: 8px;
+  }
   .rwd-table tr:nth-child(2) {
     border-top: none;
   }
